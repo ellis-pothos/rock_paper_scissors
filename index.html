@@ -13,17 +13,32 @@
     //return random number with Math.random
         let number = Math.random(); 
         
-    //if number is between 0 and .32 return "rock"
+    //if y is between 0 and .32 return "rock"
         if (number >= 0 && number <= .32) {
-         return "rock"
+            //change variable number to a string that says rock, rather than just returning rock 
+            let number = "rock";
+            //test that the variable number really is rock
+            //console.log(number);
+            //output the computer's choice as a string 
+            return "rock";
+
+        
     //if number is between .33 and .65 return "paper"
         } else if (number >= .33 && number <= .65) {
-          return "paper"
+            let number = "paper";
+            //console.log(number);
+            return "paper";
+
+          
     //if number is between .66 and 1 return "scissors"
         } else if (number >= .66 && number < 1) {
-           return "scissors"
+            let number = "scissors";
+            //console.log(number);
+            return "scissors";
         } 
     }
+
+    let computerScore = 0; 
         
     //create a new function named getHumanChoice
     function getHumanChoice() {
@@ -33,17 +48,25 @@
         console.log(x);
     }
     
-    //compare getComputerChoice and getHumanChoice choices
+    let humanScore = 0; 
 
-    //use if... else to declare who wins in each round
-    if (alert = "rock" && x = "rock") {
-        return "draw";
-    } else if (alert = "scissors" && x = "scissors") {
-        return "draw";
-    } else if (alert = "paper" && x = "paper") {
-        return "draw";
-    }
+    //play the game 
+    //function oneRound() {
+    //    let a = getComputerChoice();
+    //    let b = getHumanChoice();
 
+        //compare getComputerChoice and getHumanChoice choices
+        function oneRound() {
+          
+            if (number === "rock" && x === "rock" || number === "scissors" && x === "scissors" || number === "paper" && x === "paper") {
+                return "draw";
+            } else if (number === "paper" && x === "scissors" || number === "scissors" && x === "rock" || number === "rock" && x === "paper") {
+                return "you win!";
+            } else if (number === "scissors" && x === "paper" || number === "rock" && x === "scissors" || number === "paper" && x === "rock") {
+               return "you lose!";
+            }
+        }
+    //}
     </script>
 </body>
 </html>
