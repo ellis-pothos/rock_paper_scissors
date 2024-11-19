@@ -39,46 +39,52 @@ function getHumanChoice() {
     return resultHuman; 
 }
 
+//create a game with 5 rounds using a new function called playGame
+function playGame() {
+    let humanScore = 0; 
+    let computerScore = 0; 
 
 //program will compare human and computer choices 
     function playRound(humanChoice, computerChoice) {
         // your code here!
         if (humanChoice === computerChoice) {
             console.log("It's a draw! The score is the same.");
-            //return "It's a draw!"
     
         } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
             console.log("You win!");
-            //return "You win!"
             ++humanScore; 
             console.log("The score is " + humanScore + " for humans and " + computerScore + " for computers!")
             return humanScore; 
         }
         else if (humanChoice === 'paper' && computerChoice ==='rock'){
             console.log("You win!");
-            //return "You win!"
             ++humanScore; 
             console.log("The score is " + humanScore + " for humans and " + computerScore + " for computers!")
             return humanScore; 
         }
         else if (humanChoice === 'scissors' && computerChoice === 'paper'){
             console.log("You win!");
-            //return "You win!"
             ++humanScore; 
             console.log("The score is " + humanScore + " for humans and " + computerScore + " for computers!")
             return humanScore; 
         }
         else {
             console.log("You lose!");
-            //return "You lose!"
             ++computerScore; 
             console.log("The score is " + humanScore + " for humans and " + computerScore + " for computers!")
             return computerScore; 
         }
     }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+//create a game with five rounds using a loop
+    for (let i = 0; i < 5; i++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+    playRound(humanSelection, computerSelection);
+    }
+}
 
+playGame()
+
+    
