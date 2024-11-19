@@ -39,31 +39,43 @@ function getHumanChoice() {
     return resultHuman; 
 }
 
-//"Step 5: Write the logic to play a single round" 
+
 //program will compare human and computer choices 
-function playRound(humanChoice, computerChoice) {
-    // your code here!
-    if (humanChoice === computerChoice) {
-        console.log("It's a draw!");
-        //return "It's a draw!"
+    function playRound(humanChoice, computerChoice) {
+        // your code here!
+        if (humanChoice === computerChoice) {
+            console.log("It's a draw! The score is the same.");
+            //return "It's a draw!"
     
-    } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
-        console.log("You win!");
-        //return "You win!"
+        } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
+            console.log("You win!");
+            //return "You win!"
+            ++humanScore; 
+            console.log("The score is " + humanScore + " for humans and " + computerScore + " for computers!")
+            return humanScore; 
+        }
+        else if (humanChoice === 'paper' && computerChoice ==='rock'){
+            console.log("You win!");
+            //return "You win!"
+            ++humanScore; 
+            console.log("The score is " + humanScore + " for humans and " + computerScore + " for computers!")
+            return humanScore; 
+        }
+        else if (humanChoice === 'scissors' && computerChoice === 'paper'){
+            console.log("You win!");
+            //return "You win!"
+            ++humanScore; 
+            console.log("The score is " + humanScore + " for humans and " + computerScore + " for computers!")
+            return humanScore; 
+        }
+        else {
+            console.log("You lose!");
+            //return "You lose!"
+            ++computerScore; 
+            console.log("The score is " + humanScore + " for humans and " + computerScore + " for computers!")
+            return computerScore; 
+        }
     }
-    else if (humanChoice === 'paper' && computerChoice ==='rock'){
-        console.log("You win!");
-        //return "You win!"
-    }
-    else if (humanChoice === 'scissors' && computerChoice === 'paper'){
-        console.log("You win!");
-        //return "You win!"
-    }
-    else {
-        console.log("You lose!");
-        //return "You lose!"
-    }
-  }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
