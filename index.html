@@ -15,19 +15,34 @@
         
     //if number is between 0 and .32 return "rock"
         if (number >= 0 && number <= .32) {
-         alert("rock")
+         return "rock"
     //if number is between .33 and .65 return "paper"
         } else if (number >= .33 && number <= .65) {
-          alert("paper")
+          return "paper"
     //if number is between .66 and 1 return "scissors"
         } else if (number >= .66 && number < 1) {
-           alert("scissors")
+           return "scissors"
         } 
     }
         
-        
+    //create a new function named getHumanChoice
+    function getHumanChoice() {
+    //use prompt to get the user to input a choice
+        let x = prompt("your turn to play"); 
+    //test that the user's choice is recorded
+        console.log(x);
+    }
     
-    
+    //compare getComputerChoice and getHumanChoice choices
+
+    //use if... else to declare who wins in each round
+    if (alert = "rock" && x = "rock") {
+        return "draw";
+    } else if (alert = "scissors" && x = "scissors") {
+        return "draw";
+    } else if (alert = "paper" && x = "paper") {
+        return "draw";
+    }
 
     </script>
 </body>
