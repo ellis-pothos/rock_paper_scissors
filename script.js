@@ -4,25 +4,27 @@ let computerScore = 0;
 //create function getComputerChoice
 function getComputerChoice() {
     //return random number with Math.random that will represent rock, paper, or scissors
-    let number = Math.random(); 
-    //if y is between 0 and .32 return "rock"
-    if (number >= 0 && number <= .32) {
+    let number = Math.floor(Math.random() * 2); 
+        if (number === 0) {
         //console.log(number);
         //change variable resultComputer to a string that says rock
         let resultComputer = "rock"; 
         console.log("Computer chose " + resultComputer);
+        return resultComputer; 
 
     //if number is between .33 and .65 return "paper"
-    } else if (number >= .33 && number <= .65) {
+    } else if (number === 1) {
         //console.log(number);
         let resultComputer = "paper";
         console.log("Computer chose " + resultComputer);
+        return resultComputer; 
 
     //if number is between .66 and 1 return "scissors"
-    } else if (number >= .66 && number < 1) {
+    } else if (number === 2) {
         //console.log(number);
         let resultComputer = "scissors";
         console.log("Computer chose " + resultComputer);
+        return resultComputer; 
     } 
 }
 
@@ -34,26 +36,32 @@ function getHumanChoice() {
     let resultHuman = x.toLowerCase(); 
     //test that the user's choice is recorded
     console.log("You selected " + resultHuman + ". Good choice!");
+    return resultHuman; 
 }
 
 //"Step 5: Write the logic to play a single round" 
 //program will compare human and computer choices 
 function playRound(humanChoice, computerChoice) {
     // your code here!
-    if (humanChoice === 'rock' && computerChoice === 'scissors') {
+    if (humanChoice === computerChoice) {
+        console.log("It's a draw!");
+        //return "It's a draw!"
+    
+    } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
         console.log("You win!");
+        //return "You win!"
     }
     else if (humanChoice === 'paper' && computerChoice ==='rock'){
         console.log("You win!");
+        //return "You win!"
     }
     else if (humanChoice === 'scissors' && computerChoice === 'paper'){
         console.log("You win!");
-    }
-    else if (humanChoice === computerChoice) {
-        console.log("It's a draw!");
+        //return "You win!"
     }
     else {
         console.log("You lose!");
+        //return "You lose!"
     }
   }
 
